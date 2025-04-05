@@ -1,6 +1,6 @@
 # Pixel Tracking Script
 
-This project implements a **pixel tracking system** that captures user interactions, browser details, and cookies, then sends this data to a server for analytics.
+This project implements a **pixel tracking system** that captures user interactions, browser details, and cookies, then sends this data to your database for analytics!
 
 ## 🚀 How It Works
 1. A **JavaScript tracking script** (`pixel.js`) is injected into a webpage.
@@ -9,7 +9,7 @@ This project implements a **pixel tracking system** that captures user interacti
 4. The backend logs this data for analysis.
 
 ## 📌 How to Use
-Include this script in the `<head>` of your website:
+Include this script in the `<head>` of your website: Where cc will be a unique key for each website.
 ```html
 <script src="http://localhost:2000/v1?&cc=232323"></script>
 ```
@@ -17,7 +17,7 @@ Include this script in the `<head>` of your website:
 ## 🛠 Setup & Installation
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-repo/pixel-tracking.git
+git clone https://github.com/omjain/pixel-tracking.git
 cd pixel-tracking
 ```
 
