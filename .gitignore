@@ -1,0 +1,10 @@
+# env file
+# .env
+
+# dependencies
+/node_modules
+
+#IDE
+.idea
+.vscode
+package-lock.json
