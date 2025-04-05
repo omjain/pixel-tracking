@@ -1,64 +1,124 @@
-# Pixel Tracking Script
+# 🎯 Pixel Tracking System
 
-This project implements a **pixel tracking system** that captures user interactions, browser details, and cookies, then sends this data to your database for analytics!
+A lightweight, multi-tenant **pixel tracking system** for websites. It captures user interactions, browser metadata, and cookies — and sends the data to your backend for analytics or machine learning.
 
-## 🚀 How It Works
-1. A **JavaScript tracking script** (`pixel.js`) is injected into a webpage.
-2. The script collects details like **page URL, referrer, screen size, user agent, cookies, and events**.
-3. It sends this data to the backend using a **1x1 pixel image request**.
-4. The backend logs this data for analysis.
+---
+
+## What is Pixel Tracking?
+
+**Pixel tracking** uses a tiny, invisible 1x1 image (a “tracking pixel”) embedded in a webpage. When the image loads, it triggers a request to your server, allowing you to log user activity like:
+
+- Page views  
+- Referrer URLs  
+- Screen dimensions  
+- User agent  
+- IP address  
+- Cookies  
+- Custom events
+
+This project enhances traditional tracking pixels with a **JavaScript layer** to collect richer session data.
+
+---
+
+## 🚀 Why Use This Project?
+
+- ✅ Multi-tenant support via unique `cc` keys  
+- ✅ Tracks essential browser and session data  
+- ✅ Base64-encoded cookies for easier handling  
+- ✅ Built for integration with dashboards and ML models  
+- ✅ Lightweight, asynchronous, and non-intrusive
+
+---
+
+## ⚙️ How It Works
+
+1. A website includes a **JavaScript snippet** (`pixel.js`) in its `<head>`.
+2. The script gathers data like URL, screen size, cookies, and referrer.
+3. This data is sent to your backend using a **1x1 transparent GIF** request.
+4. The backend receives and logs this tracking information.
+
+---
 
 ## 📌 How to Use
-Include this script in the `<head>` of your website: Where cc will be a unique key for each website.
+
+The script accepts a `cc` parameter (code), allowing you to manage tracking separately for each website or client.
+Add this script tag to the `<head>` of the website you want to track:
+
 ```html
-<script src="http://localhost:2000/v1?&cc=232323"></script>
+<script src="http://localhost:2000/v1?cc=YOUR_UNIQUE_CLIENT_KEY"></script>
 ```
 
+---
+
 ## 🛠 Setup & Installation
-### 1️⃣ Clone the Repository
-```sh
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/omjain/pixel-tracking.git
 cd pixel-tracking
 ```
 
-### 2️⃣ Install Dependencies
-```sh
+### 2. Install Dependencies
+
+```bash
 npm install
 ```
 
-### 3️⃣ Start the Server
-```sh
+### 3. Start the Server
+
+```bash
 npm start
 ```
-The server runs on **http://localhost:2000**.
 
-## 📡 Endpoints
-### Serve Tracking Script
-```http
-GET /v1
-```
-- Returns `pixel.js` to be included in websites.
-
-### Capture Pixel Event
-```http
-GET /pixel
-```
-- Logs tracking data.
-- Returns a `pixel.gif` (1x1 image).
-
-## 🏗 Features
-✅ Captures **page load, referrer, screen size, cookies**  
-✅ Supports **custom event tracking**  
-✅ Encodes cookies in **Base64** for analytics  
-✅ Backend stores event data with **IP address**  
-✅ **Asynchronous** tracking to prevent page slowdown  
-
-## 💡 Next Steps
-🔹 Store tracking data in a database  
-🔹 Add a dashboard to view analytics  
-🔹 Deploy to a production server  
-
-📢 **Have questions or suggestions?** Drop a comment or open an issue!
+The server runs locally at:  
+`http://localhost:2000`
 
 ---
-📌 *Built with ❤️ BY OM*
+
+## 📡 API Endpoints
+
+### `GET /v1`
+- Serves the JavaScript tracking script (`pixel.js`)
+
+### `GET /pixel`
+- Receives and logs tracking data
+- Responds with a 1x1 transparent pixel (`pixel.gif`)
+
+---
+
+## 🏗 Features
+
+- ✅ Tracks page views and session metadata  
+- ✅ Logs referrer, screen size, cookies, and IP address  
+- ✅ Supports custom event tracking  
+- ✅ Base64-encoded cookies  
+- ✅ Fully asynchronous (no impact on page load)  
+- ✅ Multi-tenant tracking support  
+
+---
+
+## 🧭 Planned Features
+
+- 🗄️ Store tracking data in a persistent database (e.g., MongoDB, PostgreSQL)  
+- 📊 Build a client-specific analytics dashboard  
+- 🔐 Add API keys and authentication for secure usage  
+- 🧠 Train ML models on user behavior data  
+- 🚀 Dockerize and deploy to a cloud platform (e.g., Render, Vercel, AWS)  
+
+---
+
+## 📬 Feedback & Contributions
+
+Found a bug? Got a feature idea?  
+Feel free to open an issue or submit a pull request.
+
+---
+
+## 📄 License
+
+Licensed under the MIT License.
+
+---
+
+### 🚀 Built with ❤️ by [Om Jain](https://github.com/omjain)
