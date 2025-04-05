@@ -99,12 +99,13 @@ The server runs locally at:
 ---
 
 ## 🧭 Planned Features
-
-- 🗄️ Store tracking data in a persistent database (e.g., MongoDB, PostgreSQL)  
+ 
+- 🧠 Train ML models on user behavior data
+- 📊 Automated segmentation based on engagement patterns
+- 🔍 Anomaly detection for unusual traffic or fraud
+- 🧬 Personalization recommendations via behavior modeling
+- 🕵️‍♂️ Churn prediction & conversion forecasting
 - 📊 Build a client-specific analytics dashboard  
-- 🔐 Add API keys and authentication for secure usage  
-- 🧠 Train ML models on user behavior data  
-- 🚀 Dockerize and deploy to a cloud platform (e.g., Render, Vercel, AWS)  
 
 ---
 
@@ -121,4 +122,4 @@ Licensed under the MIT License.
 
 ---
 
-### 🚀 Built with ❤️ by [Om Jain](https://github.com/omjain)
+### 🚀 Built with ❤️ by [Om](https://github.com/omjain)
